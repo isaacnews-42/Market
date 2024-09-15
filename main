@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner food = new Scanner(System.in);
+
+        int choice;
+        int banana = 0, strawberry = 0, cucumber = 0, chocolateBar = 0, gummyBear = 0, chips = 0, waterBottle = 0, sodaCan = 0, tomatoes = 0;
+        double totalCost = 0;
+        System.out.println("Welcome to the Market");
+
+        do {
+            System.out.println();
+            System.out.println("Here is everything we have:");
+            System.out.println("1. Bananas - $0.50 per banana");
+            System.out.println("2. Strawberries - $2 per strawberry pack (pack contains 10 strawberries)");
+            System.out.println("3. Cucumbers - $0.50 per cucumber");
+            System.out.println("4. Chocolate bars - $1 per bar");
+            System.out.println("5. Gummy bears - $2 per lb");
+            System.out.println("6. Chips - $2.50 per bag");
+            System.out.println("7. Water - $1 per bottle");
+            System.out.println("8. Soda - $1.50 per can");
+            System.out.println("9. Tomatoes - $0.50 per tomato");
+            System.out.println("Press 0 when you are ready to checkout.");
+
+            choice = food.nextInt();
+
+            if (choice == 1) {
+                System.out.println("How many bananas do you want?");
+                banana = food.nextInt();
+                System.out.println("You have " + banana + " Total bananas." + " That is " + banana * .50 + " dollars");
+            } else if (choice == 2) {
+                System.out.println("How many strawberries do you want?");
+                strawberry = food.nextInt();
+                System.out.println("You have " + strawberry + " Total packs of strawberries." + " That is " + strawberry * 2 + " dollars");
+            } else if (choice == 3) {
+                System.out.println("How many cucumbers do you want?");
+                cucumber = food.nextInt();
+                System.out.println("You have " + cucumber + " Total cucumbers." + " That is " + cucumber * .50 + " dollars");
+            } else if (choice == 4) {
+                System.out.println("How many chocolate bars do you want?");
+                chocolateBar = food.nextInt();
+                System.out.println("You have " + chocolateBar + " Total chocolate bars." + " That is " + chocolateBar * 1 + " dollars");
+            } else if (choice == 5) {
+                System.out.println("How many pounds of gummy bears do you want?");
+                gummyBear = food.nextInt();
+                System.out.println("You have " + gummyBear + " Total pounds of gummy bears." + " That is " + gummyBear * 2 + " dollars");
+            } else if (choice == 6) {
+                System.out.println("How many bags of chips do you want?");
+                chips = food.nextInt();
+                System.out.println("You have " + chips + " Total bags of chips." + " That is " + chips * 2.50 + " dollars");
+            } else if (choice == 7) {
+                System.out.println("How many bottles of water do you want?");
+                waterBottle = food.nextInt();
+                System.out.println("You have " + waterBottle + " Total bottles of water." + " That is " + waterBottle * 1 + " dollars");
+            } else if (choice == 8) {
+                System.out.println("How many cans of soda do you want?");
+                sodaCan = food.nextInt();
+                System.out.println("You have " + sodaCan + " Total cans of soda." + " That is " + sodaCan * 1.50 + " dollars");
+            } else if (choice == 9) {
+                System.out.println("How many tomatoes do you want?");
+                tomatoes = food.nextInt();
+                System.out.println("You have " + tomatoes + " Total tomatoes." + " That is " + tomatoes * .50 + " dollars");
+            }
+        } while(choice != 0);
+        totalCost = banana * 1.50 + strawberry * 2 + cucumber * .50 + chocolateBar * 1 + gummyBear * 2 + chips * 2.50 + waterBottle * 1 + sodaCan * 1.50 + tomatoes * .50;
+
+            System.out.println("Your final cost of everything: " + totalCost + " dollars");
+            System.out.println("Press 0 again to pay.");
+
+        if (food.nextInt() == 0){
+            System.out.println("Thank you have a good day!");
+        }
+    }
+}
